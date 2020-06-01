@@ -1,0 +1,45 @@
+<script>
+	function goTo(reason){
+		if(reason === 'Host mismatch') window.location = "https://wrong.host.badssl.com/any/path"
+		if(reason === 'Expired cert') window.location = "https://expired.badssl.com"
+		if(reason === 'Self-signed cert') window.location = "https://self-signed.badssl.com"
+		if(reason === 'Cert signed by untrusted root') window.location = "https://untrusted-root.badssl.com"
+		if(reason === 'Invalid signed certificate timestamp (SCT) in cert') window.location = "https://invalid-expected-sct.badssl.com"
+		if(reason === 'Host mismatch, connection upgraded due to HSTS') window.location = "https://subdomain.preloaded- hsts.badssl.com"
+		if(reason === 'Browser determines potential captive portal') window.location = "https://captive-portal.badssl.com"
+		if(reason === 'Cert without root') window.location = "https://mitm-software.badssl.com"
+	}
+
+</script>
+<button onclick="goTo('Host mismatch')">
+	Host mismatch
+</button>
+<p></p>
+<button onclick="goTo('Expired cert')">
+	Expired cert
+</button>
+<p></p>
+<button onclick="goTo('Self-signed cert')">
+	Self-signed cert
+</button>
+<p></p>
+<button onclick="goTo('Cert signed by untrusted root')">
+	Cert signed by untrusted root
+</button>
+<p></p>
+<button onclick="goTo('Invalid signed certificate timestamp (SCT) in cert')">
+	Invalid signed certificate timestamp (SCT) in cert
+</button>
+<p></p>
+<button onclick="goTo('Host mismatch, connection upgraded due to HSTS')">
+	Host mismatch, connection upgraded due to HSTS
+</button>
+<p></p>
+<button onclick="goTo('Browser determines potential captive portal')">
+	Browser determines potential captive portal
+</button>
+<p></p>
+<button onclick="goTo('Cert without root')">
+	Cert without root
+</button>
+<p></p>
